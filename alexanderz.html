@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALEXANDER Z - 高品质保健品</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F3460',
+                        secondary: '#E94560',
+                        accent: '#FF9800',
+                        neutral: '#F8F9FA',
+                        dark: '#1A1A2E'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-primary flex items-center">
+                        <span class="fa fa-leaf mr-2 text-accent"></span>
+                        <span>ALEXANDER Z</span>
+                    </a>
+                </div>
+                
+                <!-- 桌面导航 -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium transition-colors">首页</a>
+                    <a href="#health" class="text-gray-700 hover:text-primary font-medium transition-colors">健康保健</a>
+                    <a href="#cardio" class="text-gray-700 hover:text-primary font-medium transition-colors">心脑血管</a>
+                    <a href="#children" class="text-gray-700 hover:text-primary font-medium transition-colors">儿童相关</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors">关于我们</a>
+                </nav>
+                
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                        <span class="fa fa-bars text-xl"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="#" class="block text-gray-700 hover:text-primary font-medium py-2">首页</a>
+                <a href="#health" class="block text-gray-700 hover:text-primary font-medium py-2">健康保健</a>
+                <a href="#cardio" class="block text-gray-700 hover:text-primary font-medium py-2">心脑血管</a>
+                <a href="#children" class="block text-gray-700 hover:text-primary font-medium py-2">儿童相关</a>
+                <a href="#about" class="block text-gray-700 hover:text-primary font-medium py-2">关于我们</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="bg-gradient-to-r from-primary to-dark text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-shadow">
+                    科学配方，<br>守护您和家人的健康
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                    ALEXANDER Z致力于提供高品质保健品，助您实现健康生活目标
+                </p>
+                <a href="#health" class="inline-block bg-accent hover:bg-amber-500 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    探索产品系列
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品分类区域 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">我们的产品系列</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    针对不同健康需求，我们精心研发了多种系列产品，为您和家人的健康保驾护航
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 健康保健系列 -->
+                <a href="#health" class="group">
+                    <div class="bg-neutral rounded-xl overflow-hidden shadow-lg card-hover h-full">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://picsum.photos/id/237/600/400" alt="健康保健系列产品展示" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                                <span class="fa fa-heartbeat text-primary text-xl"></span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">健康保健系列</h3>
+                            <p class="text-gray-600 mb-4">全面提升身体素质，增强免疫力，改善睡眠质量</p>
+                            <span class="inline-flex items-center text-primary font-medium">
+                                查看产品 <span class="fa fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></span>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 心脑血管系列 -->
+                <a href="#cardio" class="group">
+                    <div class="bg-neutral rounded-xl overflow-hidden shadow-lg card-hover h-full">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://picsum.photos/id/1059/600/400" alt="心脑血管系列产品展示" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                                <span class="fa fa-heart text-primary text-xl"></span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">心脑血管系列</h3>
+                            <p class="text-gray-600 mb-4">维护心血管健康，调节血压血脂，增强血液循环</p>
+                            <span class="inline-flex items-center text-primary font-medium">
+                                查看产品 <span class="fa fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></span>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 儿童相关系列 -->
+                <a href="#children" class="group">
+                    <div class="bg-neutral rounded-xl overflow-hidden shadow-lg card-hover h-full">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://picsum.photos/id/1025/600/400" alt="儿童相关系列产品展示" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                                <span class="fa fa-child text-primary text-xl"></span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">儿童相关系列</h3>
+                            <p class="text-gray-600 mb-4">促进儿童生长发育，补充必需营养，增强抵抗力</p>
+                            <span class="inline-flex items-center text-primary font-medium">
+                                查看产品 <span class="fa fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></span>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 健康保健系列产品 -->
+    <section id="health" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">健康保健系列</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    专为提升整体健康状况设计，帮助您维持活力，改善生活质量
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 亚歷山大斯極品天然角鯊烯 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover product-card" data-product="squalene">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/178b4ace50b048308b9b94916c829974.jpeg~tplv-a9rns2rl98-24:720:720.jpeg?rcl=20251015204254EB0159733B83B8E31BDE&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1761136975&x-signature=7YqeJjt7n5nvJP7WLmYP%2B83v2cU%3D" alt="亚歷山大斯極品天然角鯊烯产品图片" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-sm font-bold px-3 py-1 rounded-full">
+                            热销
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">亚歷山大斯極品天然角鯊烯</h3>
+                        <p class="text-gray-600 mb-4">
+                            促进血液循环，增强免疫力，维护胆固醇平衡，澳洲进口
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">查看详情</span>
+                            <button class="view-details bg-primary hover:bg-primary/90 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+                                <span class="fa fa-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 亚歷山大斯 澳洲卵磷脂 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover product-card" data-product="lecithin">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/5c66893f62494615afd1f8efb06b7893.jpeg~tplv-a9rns2rl98-24:720:720.jpeg?rcl=20251015204254EB0159733B83B8E31BDE&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1761136975&x-signature=QteKjrEo%2FwvbCmlrbdjup0hm1tg%3D" alt="亚歷山大斯 澳洲卵磷脂产品图片" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-primary text-white text-sm font-bold px-3 py-1 rounded-full">
+                            推荐
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">亚歷山大斯 澳洲卵磷脂</h3>
+                        <p class="text-gray-600 mb-4">
+                            血管清道夫，延缓衰老，活脑醒智，保护肝脏健康
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">查看详情</span>
+                            <button class="view-details bg-primary hover:bg-primary/90 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+                                <span class="fa fa-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 睡理产品 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover product-card" data-product="sleep-well">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="https://picsum.photos/id/1060/600/400" alt="睡理(SUPRA SLEEP WELL)产品图片" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-sm font-bold px-3 py-1 rounded-full">
+                            新品
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">睡理 (SUPRA SLEEP WELL)</h3>
+                        <p class="text-gray-600 mb-4">
+                            帮助改善睡眠质量，缓解失眠困扰，让您一夜好眠
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">查看详情</span>
+                            <button class="view-details bg-primary hover:bg-primary/90 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+                                <span class="fa fa-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 其他健康保健产品 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover product-card" data-product="vitamin-c">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://picsum.photos/id/1080/600/400" alt="维生素C产品图片" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">活力维生素C</h3>
+                        <p class="text-gray-600 mb-4">
+                            增强免疫力，抗氧化，促进胶原蛋白合成
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">查看详情</span>
+                            <button class="view-details bg-primary hover:bg-primary/90 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+                                <span class="fa fa-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover product-card" data-product="probiotic">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://picsum.photos/id/1079/600/400" alt="益生菌产品图片" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">肠道益生菌</h3>
+                        <p class="text-gray-600 mb-4">
+                            调节肠道菌群，改善消化功能，增强营养吸收
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">查看详情</span>
+                            <button class="view-details bg-primary hover:bg-primary/90 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+                                <span class="fa fa-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 心脑血管系列产品 -->
+    <section id="cardio" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">心脑血管系列</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    专注于心脑血管健康，帮助维持正常的血压和血脂水平
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover product-card" data-product="omega3">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://picsum.photos/id/1081/600/400" alt="深海鱼油产品图片" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">深海鱼油Omega-3</h3>
+                        <p class="text-gray-600 mb-4">
+                            富含EPA和DHA，支持心血管健康，维持正常血脂水平
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">查看详情</span>
+                            <button class="view-details bg-primary hover:bg-primary/90 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+                                <span class="fa fa-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover product-card" data-product="coq10">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://picsum.photos/id/1082/600/400" alt="辅酶Q10产品图片" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">辅酶Q10</h3>
+                        <p class="text-gray-600 mb-4">
+                            支持心脏功能，增强心肌活力，提供细胞能量
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">查看详情</span>
+                            <button class="view-details bg-primary hover:bg-primary/90 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+                                <span class="fa fa-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover product-card" data-product="garlic">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://picsum.photos/id/1083/600/400" alt="大蒜素产品图片" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">天然大蒜素</h3>
+                        <p class="text-gray-600 mb-4">
+                            帮助维持健康血压，促进血液循环，支持心血管系统
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">查看详情</span>
+                            <button class="view-details bg-primary hover:bg-primary/90 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+                                <span class="fa fa-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 儿童相关系列产品 -->
+    <section id="children" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">儿童相关系列</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    专为儿童生长发育设计，提供全面营养支持，助力健康成长
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover product-card" data-product="kids-multivitamin">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://picsum.photos/id/1084/600/400" alt="儿童多维元素片产品图片" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">儿童多维元素片</h3>
+                        <p class="text-gray-600 mb-4">
+                            全面补充儿童所需维生素和矿物质，促进生长发育
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">查看详情</span>
+                            <button class="view-details bg-primary hover:bg-primary/90 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+                                <span class="fa fa-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover product-card" data-product="kids-calcium">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://picsum.photos/id/1085/600/400" alt="儿童钙+D3产品图片" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">儿童钙+D3</h3>
+                        <p class="text-gray-600 mb-4">
+                            促进骨骼发育，增强牙齿健康，帮助钙吸收利用
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">查看详情</span>
+                            <button class="view-details bg-primary hover:bg-primary/90 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+                                <span class="fa fa-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover product-card" data-product="kids-omega3">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://picsum.photos/id/1086/600/400" alt="儿童DHA藻油产品图片" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">儿童DHA藻油</h3>
+                        <p class="text-gray-600 mb-4">
+                            支持大脑发育，提升认知能力，促进视力健康
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">查看详情</span>
+                            <button class="view-details bg-primary hover:bg-primary/90 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+                                <span class="fa fa-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://picsum.photos/id/1088/800/600" alt="ALEXANDER Z公司图片" class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">关于 ALEXANDER Z</h2>
+                    <p class="text-gray-600 mb-4 text-lg">
+                        ALEXANDER Z 是一家致力于提供高品质健康产品的专业公司，我们坚持以科学为基础，以质量为核心，为全球消费者提供安全、有效的健康解决方案。
+                    </p>
+                    <p class="text-gray-600 mb-6 text-lg">
+                        我们的产品经过严格的质量控制和科学验证，从原料采购到生产加工，每一步都遵循最高标准，确保为您提供最优质的健康产品。
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="fa fa-certificate text-primary"></span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 mb-2">品质保证</h3>
+                                <p class="text-gray-600">严格的质量控制流程，确保产品安全有效</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="fa fa-flask text-primary"></span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 mb-2">科学配方</h3>
+                                <p class="text-gray-600">由专业团队研发，基于最新科学研究</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="fa fa-leaf text-primary"></span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 mb-2">天然原料</h3>
+                                <p class="text-gray-600">精选优质天然原料，温和无刺激</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="fa fa-users text-primary"></span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 mb-2">专业团队</h3>
+                                <p class="text-gray-600">由医学、营养学专家组成的研发团队</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="fa fa-leaf mr-2 text-accent"></span>
+                        ALEXANDER Z
+                    </h3>
+                    <p class="text-gray-300 mb-6">
+                        致力于提供高品质保健品，助您实现健康生活目标
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
+                            <span class="fa fa-facebook"></span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
+                            <span class="fa fa-twitter"></span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
+                            <span class="fa fa-instagram"></span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
+                            <span class="fa fa-linkedin"></span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="#health" class="text-gray-300 hover:text-white transition-colors">健康保健系列</a></li>
+                        <li><a href="#cardio" class="text-gray-300 hover:text-white transition-colors">心脑血管系列</a></li>
+                        <li><a href="#children" class="text-gray-300 hover:text-white transition-colors">儿童相关系列</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">关于我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">联系我们</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="fa fa-map-marker mt-1 mr-3 text-accent"></span>
+                            <span class="text-gray-300">北京市朝阳区健康路88号</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="fa fa-phone mr-3 text-accent"></span>
+                            <span class="text-gray-300">400-888-9999</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="fa fa-envelope mr-3 text-accent"></span>
+                            <span class="text-gray-300">info@alexanderz.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">订阅资讯</h4>
+                    <p class="text-gray-300 mb-4">
+                        订阅我们的电子邮件，获取最新产品信息和健康资讯
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="您的邮箱地址" class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-accent hover:bg-amber-500 text-white px-4 rounded-r-lg transition-colors">
+                            <span class="fa fa-paper-plane"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 ALEXANDER Z. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 产品详情模态框 -->
+    <div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="modal-overlay"></div>
+        <div class="relative bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl transform transition-all">
+            <button id="close-modal" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center z-10 hover:bg-gray-200 transition-colors">
+                <span class="fa fa-times text-gray-700"></span>
+            </button>
+            
+            <div id="modal-content" class="p-6 md:p-8">
+                <!-- 产品详情内容将通过JS动态填充 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 产品数据
+        const products = {
+            // 亚歷山大斯極品天然角鯊烯
+            'squalene': {
+                name: '亚歷山大斯極品天然角鯊烯',
+                image: 'https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/178b4ace50b048308b9b94916c829974.jpeg~tplv-a9rns2rl98-24:720:720.jpeg?rcl=20251015204254EB0159733B83B8E31BDE&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1761136975&x-signature=7YqeJjt7n5nvJP7WLmYP%2B83v2cU%3D',
+                benefits: [
+                    '促进血液循环，预防和治疗因血液不良而引起的疾病（高血压、低血压、心脏病等）',
+                    '促进肝脏功能，预防肝炎和脂肪肝',
+                    '防治头痛、偏头痛，改善睡眠和记忆力',
+                    '维护高密度胆固醇（HDL）并降低低密度胆固醇（LDL）水平，降血脂',
+                    '增加血管弹性，预防血栓，通血管',
+                    '改善肠道机能，缓解经常性腹泻和便秘',
+                    '提高人体免疫功能，改善各种敏感症状（鼻炎、鼻敏感、皮肤过敏）',
+                    '具有护肝功能，抗衰老，增强抵抗力'
+                ],
+                ingredients: `
+                    <p class="font-semibold mb-3">每粒含：</p>
+                    <ul class="space-y-2 mb-4">
+                        <li>• 1000mg 天然角鯊烯</li>
+                    </ul>
+                    <p class="text-gray-700 mb-4">
+                        澳洲極品天然角鯊烯，存活於深海無污染的環境，由其肝臟中提取的天然獨特的活性物質，能提供人體血液循環和各組織器官的細胞有氧新陳代謝，增加血液流動速度和增強白細胞的吞噬能力，對人體免疫系統有明顯提升。
+                    </p>
+                    <p class="font-semibold mb-2">服用方法：</p>
+                    <p>每日1次，每次1-2粒</p>
+                `,
+                category: '健康保健系列'
+            },
+            // 亚歷山大斯 澳洲卵磷脂
+            'lecithin': {
+                name: '亚歷山大斯 澳洲卵磷脂',
+                image: 'https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/5c66893f62494615afd1f8efb06b7893.jpeg~tplv-a9rns2rl98-24:720:720.jpeg?rcl=20251015204254EB0159733B83B8E31BDE&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1761136975&x-signature=QteKjrEo%2FwvbCmlrbdjup0hm1tg%3D',
+                benefits: [
+                    '延缓衰老，帮助修复细胞膜，促进细胞结构正常化',
+                    '分解脂肪，促进血液循环，使皮肤变得光滑柔润',
+                    '活腦醒智，促进腦細胞活動，增強集中力、記憶力及靈活度',
+                    '保护肝脏，促进肝脏脂肪分解及血液循环，维持正常肝功能',
+                    '血管暢通，清除血管廢物，減少脂肪滯留，使血管壁富彈性'
+                ],
+                ingredients: `
+                    <p class="font-semibold mb-3">每粒含：</p>
+                    <ul class="space-y-2 mb-4">
+                        <li>• 卵磷脂 1000毫克</li>
+                    </ul>
+                    <p class="text-gray-700 mb-4">
+                        卵磷脂是腦部及身體各部份細胞結構的基礎物質，對維持生物膜的生理活性和機體的正常代謝起關鍵作用，被譽為"血管清道夫"。根據世界衛生組織（WHO）的建議，每日攝取當量的卵磷脂可維持健康。
+                    </p>
+                    <p class="font-semibold mb-2">適合人士：</p>
+                    <ul class="space-y-1 mb-4">
+                        <li>• 欲提高記憶力的人士</li>
+                        <li>• 欲維持正常肝功能的人士</li>
+                        <li>• 欲延緩哀老的人士</li>
+                        <li>• 欲保持皮膚潤澤的人士</li>
+                    </ul>
+                    <p class="font-semibold mb-2">服用方法：</p>
+                    <p>以一粒作為膳食補充劑或遵醫囑</p>
+                `,
+                category: '健康保健系列'
+            },
+            'sleep-well': {
+                name: '睡理 (SUPRA SLEEP WELL)',
+                image: 'https://picsum.photos/id/1060/800/600',
+                benefits: [
+                    '帮助快速入睡，减少入睡时间',
+                    '提高睡眠质量，增加深度睡眠时间',
+                    '缓解失眠症状，改善睡眠障碍',
+                    '减少夜间醒来次数，提高睡眠连续性',
+                    '醒来后感觉精力充沛，提升日间活力'
+                ],
+                ingredients: `
+                    <p class="font-semibold mb-3">每粒胶囊含：</p>
+                    <ul class="space-y-2 mb-4">
+                        <li>• Vitamin B-6 (Pyridoxine HCL) 4 mg</li>
+                        <li>• Folic Acid 200 mcg</li>
+                        <li>• Vitamin B-12 (Cyanocobalamin) 50 mcg</li>
+                        <li>• 5-HTP (5-Hydroxytryptophan) 100 mg</li>
+                        <li>• L-Theanine 200 mg</li>
+                        <li>• Melatonin 5 mg</li>
+                    </ul>
+                    <p class="font-semibold mb-2">服用方法：</p>
+                    <p>睡前30分钟服用1-2粒胶囊</p>
+                `,
+                category: '健康保健系列'
+            },
+            'vitamin-c': {
+                name: '活力维生素C',
+                image: 'https://picsum.photos/id/1080/800/600',
+                benefits: [
+                    '增强免疫系统功能，提高抵抗力',
+                    '抗氧化，抵抗自由基对细胞的损伤',
+                    '促进胶原蛋白合成，有益皮肤健康',
+                    '帮助铁吸收，预防缺铁性贫血',
+                    '支持心血管健康，维护血管弹性'
+                ],
+                ingredients: `
+                    <p class="font-semibold mb-3">每片含：</p>
+                    <ul class="space-y-2 mb-4">
+                        <li>• 维生素C (抗坏血酸) 1000 mg</li>
+                        <li>• 柑橘生物类黄酮 100 mg</li>
+                        <li>• 玫瑰果提取物 50 mg</li>
+                        <li>• 芦丁 25 mg</li>
+                        <li>• 芸香苷 25 mg</li>
+                    </ul>
+                    <p class="font-semibold mb-2">服用方法：</p>
+                    <p>每日1片，随餐服用</p>
+                `,
+                category: '健康保健系列'
+            },
+            'probiotic': {
+                name: '肠道益生菌',
+                image: 'https://picsum.photos/id/1079/800/600',
+                benefits: [
+                    '调节肠道菌群平衡，改善消化功能',
+                    '增强营养物质吸收，提高食物利用率',
+                    '支持免疫系统，增强身体抵抗力',
+                    '缓解便秘和腹泻等肠道不适症状',
+                    '促进肠道健康，降低肠道炎症'
+                ],
+                ingredients: `
+                    <p class="font-semibold mb-3">每粒含：</p>
+                    <ul class="space-y-2 mb-4">
+                        <li>• 双歧杆菌 50亿 CFU</li>
+                        <li>• 乳酸菌 50亿 CFU</li>
+                        <li>• 嗜酸乳杆菌 50亿 CFU</li>
+                        <li>• 低聚果糖 (益生元) 200 mg</li>
+                        <li>• 菊粉 100 mg</li>
+                    </ul>
+                    <p class="font-semibold mb-2">服用方法：</p>
+                    <p>每日1-2粒，饭前30分钟服用，建议冷藏保存</p>
+                `,
+                category: '健康保健系列'
+            },
+            'omega3': {
+                name: '深海鱼油Omega-3',
+                image: 'https://picsum.photos/id/1081/800/600',
+                benefits: [
+                    '支持心血管健康，维持正常血压',
+                    '帮助维持健康的血脂水平',
+                    '促进大脑功能，支持认知健康',
+                    '减轻关节炎症，缓解关节不适',
+                    '支持视觉健康，维护眼睛功能'
+                ],
+                ingredients: `
+                    <p class="font-semibold mb-3">每粒含：</p>
+                    <ul class="space-y-2 mb-4">
+                        <li>• EPA (二十碳五烯酸) 300 mg</li>
+                        <li>• DHA (二十二碳六烯酸) 200 mg</li>
+                        <li>• 维生素E 10 IU</li>
+                        <li>• 天然柠檬油 5 mg</li>
+                    </ul>
+                    <p class="font-semibold mb-2">服用方法：</p>
+                    <p>每日2粒，随餐服用</p>
+                `,
+                category: '心脑血管系列'
+            },
+            'coq10': {
+                name: '辅酶Q10',
+                image: 'https://picsum.photos/id/1082/800/600',
+                benefits: [
+                    '支持心脏功能，增强心肌活力',
+                    '提供细胞能量，减轻疲劳感',
+                    '抗氧化，保护心血管系统',
+                    '帮助维持正常血压水平',
+                    '支持能量代谢，提升身体活力'
+                ],
+                ingredients: `
+                    <p class="font-semibold mb-3">每粒含：</p>
+                    <ul class="space-y-2 mb-4">
+                        <li>• 辅酶Q10 100 mg</li>
+                        <li>• 维生素E 15 IU</li>
+                        <li>• 维生素C 50 mg</li>
+                        <li>• 左旋肉碱 50 mg</li>
+                    </ul>
+                    <p class="font-semibold mb-2">服用方法：</p>
+                    <p>每日1粒，随餐服用</p>
+                `,
+                category: '心脑血管系列'
+            },
+            'garlic': {
+                name: '天然大蒜素',
+                image: 'https://picsum.photos/id/1083/800/600',
+                benefits: [
+                    '帮助维持健康血压水平',
+                    '促进血液循环，改善血液流动',
+                    '支持正常的胆固醇水平',
+                    '增强免疫系统功能',
+                    '具有天然抗菌和抗氧化特性'
+                ],
+                ingredients: `
+                    <p class="font-semibold mb-3">每粒含：</p>
+                    <ul class="space-y-2 mb-4">
+                        <li>• 标准化大蒜提取物 500 mg</li>
+                        <li>• 大蒜素 5 mg</li>
+                        <li>• 维生素B6 2 mg</li>
+                        <li>• 叶酸 200 mcg</li>
+                    </ul>
+                    <p class="font-semibold mb-2">服用方法：</p>
+                    <p>每日2粒，随餐服用，无大蒜异味</p>
+                `,
+                category: '心脑血管系列'
+            },
+            'kids-multivitamin': {
+                name: '儿童多维元素片',
+                image: 'https://picsum.photos/id/1084/800/600',
+                benefits: [
+                    '全面补充儿童生长发育所需维生素和矿物质',
+                    '支持免疫系统发育，增强抵抗力',
+                    '促进骨骼和牙齿健康发育',
+                    '支持大脑发育和认知功能',
+                    '提供能量代谢支持，减少疲劳'
+                ],
+                ingredients: `
+                    <p class="font-semibold mb-3">每片含关键营养素：</p>
+                    <ul class="space-y-2 mb-4">
+                        <li>• 维生素A 400 mcg</li>
+                        <li>• 维生素D3 5 mcg</li>
+                        <li>• 维生素C 30 mg</li>
+                        <li>• 维生素B群 多种</li>
+                        <li>• 钙 100 mg</li>
+                        <li>• 铁 3 mg</li>
+                        <li>• 锌 3 mg</li>
+                    </ul>
+                    <p class="font-semibold mb-2">服用方法：</p>
+                    <p>2-4岁儿童：每日1片；4岁以上：每日2片，咀嚼食用，具有天然水果味</p>
+                `,
+                category: '儿童相关系列'
+            },
+            'kids-calcium': {
+                name: '儿童钙+D3',
+                image: 'https://picsum.photos/id/1085/800/600',
+                benefits: [
+                    '促进骨骼和牙齿健康发育',
+                    '帮助钙的吸收和利用',
+                    '支持肌肉功能和神经发育',
+                    '有助于维持正常的骨密度',
+                    '适合快速生长期儿童的钙需求'
+                ],
+                ingredients: `
+                    <p class="font-semibold mb-3">每片含：</p>
+                    <ul class="space-y-2 mb-4">
+                        <li>• 碳酸钙 300 mg（相当于钙 120 mg）</li>
+                        <li>• 维生素D3 5 mcg (200 IU)</li>
+                        <li>• 镁 30 mg</li>
+                        <li>• 锌 2 mg</li>
+                    </ul>
+                    <p class="font-semibold mb-2">服用方法：</p>
+                    <p>2-6岁儿童：每日1片；7-12岁：每日2片，咀嚼食用，草莓口味</p>
+                `,
+                category: '儿童相关系列'
+            },
+            'kids-omega3': {
+                name: '儿童DHA藻油',
+                image: 'https://picsum.photos/id/1086/800/600',
+                benefits: [
+                    '支持大脑发育和认知功能',
+                    '促进神经系统健康',
+                    '有助于视力发育和维护',
+                    '支持学习能力和记忆力',
+                    '纯植物来源，适合儿童'
+                ],
+                ingredients: `
+                    <p class="font-semibold mb-3">每粒含：</p>
+                    <ul class="space-y-2 mb-4">
+                        <li>• DHA (二十二碳六烯酸) 100 mg</li>
+                        <li>• EPA (二十碳五烯酸) 20 mg</li>
+                        <li>• 维生素E 3 IU</li>
+                        <li>• 天然草莓香精</li>
+                    </ul>
+                    <p class="font-semibold mb-2">服用方法：</p>
+                    <p>3-6岁儿童：每日1粒；7-12岁：每日2粒，可刺破胶囊混入食物或直接服用，水果口味</p>
+                `,
+                category: '儿童相关系列'
+            }
+        };
+
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动菜单（如果打开）
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+
+        // 产品详情模态框
+        const modal = document.getElementById('product-modal');
+        const modalContent = document.getElementById('modal-content');
+        const closeModal = document.getElementById('close-modal');
+        const modalOverlay = document.getElementById('modal-overlay');
+
+        // 打开模态框
+        document.querySelectorAll('.view-details').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.closest('.product-card').dataset.product;
+                const product = products[productId];
+                
+                if (product) {
+                    // 填充模态框内容
+                    modalContent.innerHTML = `
+                        <div class="text-center mb-6">
+                            <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-3">
+                                ${product.category}
+                            </span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">${product.name}</h2>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-auto rounded-xl shadow-md">
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <span class="fa fa-check-circle text-accent mr-2"></span>
+                                产品功效
+                            </h3>
+                            <ul class="space-y-2 pl-6">
+                                ${product.benefits.map(benefit => `
+                                    <li class="flex items-start">
+                                        <span class="fa fa-angle-right text-primary mt-1 mr-2"></span>
+                                        <span>${benefit}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <span class="fa fa-list-alt text-accent mr-2"></span>
+                                产品成分
+                            </h3>
+                            <div class="pl-6">
+                                ${product.ingredients}
+                            </div>
+                        </div>
+                    `;
+                    
+                    // 显示模态框
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden'; // 防止背景滚动
+                }
+            });
+        });
+
+        // 关闭模态框
+        function closeModalFunc() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // 恢复背景滚动
+        }
+
+        closeModal.addEventListener('click', closeModalFunc);
+        modalOverlay.addEventListener('click', closeModalFunc);
+
+        // 按ESC键关闭模态框
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModalFunc();
+            }
+        });
+    </script>
+</body>
+</html>
